@@ -44,6 +44,7 @@
       box-shadow: 0 20px 60px rgba(0,0,0,0.75);
     }
 
+    /* ===== タイトル ===== */
     .title {
       font-size: 46px;
       font-weight: 900;
@@ -76,6 +77,7 @@
       margin-bottom: 26px;
     }
 
+    /* ===== CTA ===== */
     .cta {
       display: inline-block;
       width: 100%;
@@ -130,10 +132,9 @@
       opacity: 0.95;
     }
 
-    /* 【口座番号】ラベル（コピー対象外） */
     .account-label {
       margin-top: 10px;
-      font-size: 14px; /* ← 周囲と同サイズ */
+      font-size: 14px;
       font-weight: 600;
       opacity: 0.95;
     }
@@ -166,12 +167,27 @@
       background: linear-gradient(135deg, #22d3ee, #7c5cff);
     }
 
-    .note {
-      margin-top: 14px;
-      font-size: 12px;
-      opacity: 0.7;
-      line-height: 1.6;
+    /* ===== お取扱注意事項 ===== */
+    .caution {
+      margin-top: 26px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .caution h4 {
+      margin-bottom: 10px;
+      font-size: 15px;
+      font-weight: 700;
       text-align: center;
+      color: #fca5a5;
+      letter-spacing: 0.05em;
+    }
+
+    .caution img {
+      width: 100%;
+      border-radius: 14px;
+      display: block;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
     }
 
     footer {
@@ -218,11 +234,13 @@
         <button class="copy-btn" onclick="copyAccount()">コピー</button>
       </div>
 
-      <p>口座名義：エスアンドエスインターナショナルトレーディング株式会社</p>
+      <p>口座名義：アンドエスインターナショナルトレーディング株式会社</p>
     </div>
 
-    <div class="note">
-      
+    <!-- お取扱注意事項 -->
+    <div class="caution">
+      <h4>お取扱注意事項</h4>
+      <img src="IMG_1940.PNG" alt="高速充電はお控えください">
     </div>
 
   </div>
