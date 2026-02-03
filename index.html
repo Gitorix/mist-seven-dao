@@ -19,18 +19,10 @@
 
     .hero {
       min-height: 100vh;
-      background-image: url("bg-main.png");
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: 40% center;
+      background: url("bg-main.png") no-repeat 40% center / cover;
       display: flex;
-      align-items: center;
       justify-content: center;
       padding: 18px;
-    }
-
-    @media (max-width: 768px) {
-      .hero { background-position: 38% center; }
     }
 
     .overlay {
@@ -48,23 +40,15 @@
     .title {
       font-size: 46px;
       font-weight: 900;
-      line-height: 1.15;
-      letter-spacing: 0.08em;
       margin-bottom: 14px;
-      background: linear-gradient(
-        90deg,
-        #7c5cff,
-        #22d3ee,
-        #ff5cf4,
-        #7c5cff
-      );
+      background: linear-gradient(90deg,#7c5cff,#22d3ee,#ff5cf4,#7c5cff);
       background-size: 300% 300%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      animation: titleFlow 7s ease infinite;
+      animation: flow 7s ease infinite;
     }
 
-    @keyframes titleFlow {
+    @keyframes flow {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
@@ -79,64 +63,50 @@
 
     /* ===== CTA ===== */
     .cta {
-      display: inline-block;
+      display: block;
       width: 100%;
       padding: 20px 0;
       border-radius: 999px;
       font-size: 17px;
       font-weight: 900;
-      letter-spacing: 0.08em;
-      text-decoration: none;
       color: #000;
-      background: linear-gradient(
-        135deg,
-        #7c5cff,
-        #22d3ee,
-        #ff5cf4
-      );
-      box-shadow:
-        0 0 16px rgba(124,92,255,0.55),
-        0 0 32px rgba(34,211,238,0.35);
-      animation: calmBeat 2.8s ease-in-out infinite;
+      text-decoration: none;
+      background: linear-gradient(135deg,#7c5cff,#22d3ee,#ff5cf4);
+      box-shadow: 0 0 18px rgba(124,92,255,0.6);
+      animation: beat 2.8s ease-in-out infinite;
     }
 
-    @keyframes calmBeat {
+    @keyframes beat {
       0% { transform: scale(1); }
       45% { transform: scale(1.03); }
       100% { transform: scale(1); }
     }
 
-    /* ===== 振込情報 ===== */
+    /* ===== 振込口座 ===== */
     .bank {
       margin-top: 28px;
       padding: 22px 18px;
       background: rgba(20,25,45,0.65);
       border-radius: 18px;
       text-align: left;
-      box-shadow: inset 0 0 0 1px rgba(124,92,255,0.25);
     }
 
     .bank h3 {
-      margin: 0 0 14px;
-      font-size: 17px;
-      font-weight: 800;
       text-align: center;
+      font-size: 17px;
       color: #7dd3fc;
-      letter-spacing: 0.05em;
+      margin-bottom: 14px;
     }
 
     .bank p {
-      margin: 6px 0;
       font-size: 14px;
-      line-height: 1.6;
-      opacity: 0.95;
+      margin: 6px 0;
     }
 
     .account-label {
       margin-top: 10px;
       font-size: 14px;
       font-weight: 600;
-      opacity: 0.95;
     }
 
     .copy-box {
@@ -147,27 +117,51 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 10px;
     }
 
     .copy-box span {
       font-size: 16px;
       font-weight: 800;
-      letter-spacing: 0.08em;
     }
 
     .copy-btn {
-      padding: 8px 14px;
-      border-radius: 999px;
       border: none;
-      cursor: pointer;
+      border-radius: 999px;
+      padding: 8px 14px;
       font-size: 12px;
       font-weight: 700;
-      color: #000;
-      background: linear-gradient(135deg, #22d3ee, #7c5cff);
+      cursor: pointer;
+      background: linear-gradient(135deg,#22d3ee,#7c5cff);
     }
 
-    /* ===== お取扱注意事項 ===== */
+    /* ===== TOPIK 見出し ===== */
+    .topic-title {
+      margin-top: 28px;
+      margin-bottom: 10px;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-align: center;
+      color: #a5b4fc;
+      opacity: 0.9;
+    }
+
+    /* ===== トピック画像（PDF） ===== */
+    .topic img {
+      width: 100%;
+      border-radius: 16px;
+      display: block;
+      cursor: pointer;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .topic img:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.75);
+    }
+
+    /* ===== 注意事項 ===== */
     .caution {
       margin-top: 26px;
       padding-top: 18px;
@@ -175,18 +169,15 @@
     }
 
     .caution h4 {
-      margin-bottom: 10px;
-      font-size: 15px;
-      font-weight: 700;
       text-align: center;
+      font-size: 15px;
       color: #fca5a5;
-      letter-spacing: 0.05em;
+      margin-bottom: 10px;
     }
 
     .caution img {
       width: 100%;
       border-radius: 14px;
-      display: block;
       box-shadow: 0 10px 30px rgba(0,0,0,0.6);
     }
 
@@ -194,7 +185,7 @@
       text-align: center;
       font-size: 11px;
       opacity: 0.55;
-      padding: 26px 0 30px;
+      padding: 26px 0;
     }
   </style>
 </head>
@@ -222,13 +213,11 @@
 
     <div class="bank">
       <h3>MIST購入お振込口座</h3>
-
-      <p>銀行名：住信SBIネット銀行（金融機関コード：0038）</p>
-      <p>支店名：法人第一支店（支店コード：106）</p>
+      <p>銀行名：住信SBIネット銀行（0038）</p>
+      <p>支店名：法人第一支店（106）</p>
       <p>口座種別：普通</p>
 
       <div class="account-label">【口座番号】</div>
-
       <div class="copy-box">
         <span id="account">1719245</span>
         <button class="copy-btn" onclick="copyAccount()">コピー</button>
@@ -237,10 +226,20 @@
       <p>口座名義：アンドエスインターナショナルトレーディング株式会社</p>
     </div>
 
-    <!-- お取扱注意事項 -->
+    <!-- TOPIK -->
+    <div class="topic-title">TOPIK</div>
+
+    <!-- トピック（PDF） -->
+    <div class="topic">
+      <a href="セブダオ向けMISTpdf.pdf" target="_blank" rel="noopener">
+        <img src="topic-mist.png" alt="MIST資料を見る">
+      </a>
+    </div>
+
+    <!-- 注意事項 -->
     <div class="caution">
       <h4>お取扱注意事項</h4>
-      <img src="IMG_1940.PNG" alt="高速充電はお控えください">
+      <img src="IMG_1949.PNG" alt="急速充電はお控えください">
     </div>
 
   </div>
